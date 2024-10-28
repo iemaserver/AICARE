@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <title>Centre of Excellence in Renewable Energy</title>
+    <style>
+      body {
+            background: url('/assets/AboutBg.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+      .gradient-text {
+        background: linear-gradient(to right, #2b47ff, #1a58d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        padding-bottom: 5px;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.7s ease-in-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .info-card:hover {
+        transform: translateY(-10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .splide__slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 15px; /* Rounded edges */
+          transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+
+      .splide__slide:hover img {
+          transform: scale(1.05); /* Zoom effect */
+          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+      }
+
+      .slider-container {
+          border-radius: 15px; /* Rounded edges for container */
+          overflow: hidden; /* Ensures rounded edges are applied to images */
+      }
+
+      /* Custom styles for the slider arrows and pagination */
+      .splide__arrow {
+          background-color: rgba(255, 255, 255, 0.8);
+          border: none;
+          border-radius: 50%;
+          padding: 10px;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .splide__arrow:hover {
+          background-color: rgba(255, 255, 255, 1);
+          transform: scale(1.1);
+      }
+
+      .splide__pagination {
+          bottom: 15px; /* Position the pagination dots */
+      }
+
+      .splide__pagination .splide__pagination__page {
+          background-color: #2b47ff;
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          margin: 0 4px;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .splide__pagination .is-active {
+          background-color: #142850; /* Active dot color */
+          transform: scale(1.2); /* Slightly larger active dot */
+      }
+
+      .splide__pagination .splide__pagination__page:hover {
+          background-color: #1d4ed8; /* Hover color for pagination dots */
+      }
+
+      .icon-box {
+        display: flex;
+        align-items: flex-start;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+    </style>
+</head>
+<body class="font-poppins text-gray-800">
+    <!-- Header Section with Logo and Animated Title -->
+    <header class="text-center py-8 fade-in">
+        <img src="/assets/Renewable_Energy_Logo.png" alt="Logo" class="w-36 mx-auto">
+        <h1 class="text-5xl font-extrabold gradient-text">Centre of Excellence in Renewable Energy</h1>
+    </header>
+
+    <!-- Main Content with Grid Layout for Full-Screen Use -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-8">
+        <!-- Left Column - About and Who We Are -->
+        <div class="info-card p-8 bg-white shadow-md rounded-lg transform transition-all duration-300 hover:shadow-xl">
+            <!-- About Section -->
+            <h2 class="text-4xl font-bold text-blue-600 fade-in">About Us</h2>
+            <p class="mt-4 text-md text-gray-700 leading-relaxed fade-in lg:text-justify">
+              The Centre of Excellence in Renewable Energy at the University of Engineering and Management (UEM), Kolkata, is dedicated to advancing research, innovation, and education in the field of renewable energy. With the growing global emphasis on sustainable energy solutions, the centre aims to address the pressing challenges of energy consumption and environmental sustainability. Centre of Excellence in Renewable Energy focuses on conducting in-depth studies and research on systems related to renewable energy, along with relevant products and technologies. The main objectives of this COE RE are Research and Development means to conduct comprehensive studies on renewable energy systems, technologies, and products. Next is Collaboration i.e. to work with industry, academia, and research institutes to address various challenges and develop innovative solutions for real-life applications. Lastly, Knowledge Dissemination, means to promote the sharing of knowledge and foster a culture of continuous learning, empowering individuals and organizations to make informed decisions and contribute to a greener India. By focusing on innovative solutions, the centre aspires to contribute significantly to the transition towards a sustainable energy future.
+
+            </p>
+    
+        </div>
+
+        <!-- Right Column - Image Slider with Rounded Corners -->
+        <div id="image-slider" class="splide slider-container h-full fade-in">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    
+                    <li class="splide__slide">
+                        <img src="/assets/RE_1.JPG" alt="University Entrance">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="/assets/RE_2.JPG" alt="University Entrance">
+                  </li>  
+                    <li class="splide__slide">
+                        <img src="/assets/RE_3.jpeg" alt="University Entrance">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Splide JS for Image Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#image-slider', {
+                type       : 'fade',
+                heightRatio: 0.6,
+                cover      : true,
+                pagination : true,
+                arrows     : true,
+                autoplay   : true,
+                interval   : 4000,
+                pauseOnHover: true,
+                speed      : 1000 // Smooth transition speed
+            }).mount();
+        });
+    </script>
+</body>
+</html>
