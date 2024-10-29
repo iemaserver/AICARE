@@ -190,38 +190,37 @@
       </div>
 
       <!-- Timer Box -->
-      <div class="Timer_Box flex justify-center space-x-5 lg:space-x-10 m-4 lg:m-">
+<div class="Timer_Box flex justify-center space-x-5 lg:space-x-10 m-4 lg:m-">
+  <!-- First Timer Box (Days) -->
+  <div class="bg-[#D2E1F9] h-16 w-20 lg:h-20 lg:w-28 rounded-lg flex flex-col justify-center items-center">
+    <span id="days" class="text-3xl lg:text-4xl font-semibold">99</span>
+    <span class="text-sm">Days</span>
+  </div>
 
-        <!-- First Timer Box (Days) -->
-        <div class="bg-[#D2E1F9] h-16 w-20 lg:h-20 lg:w-28 rounded-lg flex flex-col justify-center items-center">
-          <span class="text-3xl lg:text-4xl font-semibold">99</span>
-          <span class="text-sm">Days</span>
-        </div>
-  
-        <!-- Second Timer Box (Hours) -->
-        <div class="h-16 w-20 lg:h-20 lg:w-28 p-px rounded-lg bg-gradient-to-tr from-blue-500 via-white via-blue-500 to-blue-500">
-          <div class="bg-black rounded-lg h-full w-full flex flex-col justify-center items-center text-white">
-            <span class="text-3xl lg:text-4xl font-semibold">17</span>
-            <span class="text-sm">Hours</span>
-          </div>
-        </div>
-  
-        <!-- Third Timer Box (Minutes) -->
-        <div class="h-16 w-20 lg:h-20 lg:w-28 p-px rounded-lg bg-gradient-to-tr from-blue-500 via-white via-blue-500 to-blue-500">
-          <div class="bg-black rounded-lg h-full w-full flex flex-col justify-center items-center text-white">
-            <span class="text-3xl lg:text-4xl font-semibold">55</span>
-            <span class="text-sm">Minutes</span>
-          </div>
-        </div>
-  
-        <!-- Fourth Timer Box (Seconds) -->
-        <div class="h-16 w-20 lg:h-20 lg:w-28 p-px rounded-lg bg-gradient-to-tr from-blue-500 via-white via-blue-500 to-blue-500">
-          <div class="bg-black rounded-lg h-full w-full flex flex-col justify-center items-center text-white">
-            <span class="text-3xl lg:text-4xl font-semibold">11</span>
-            <span class="text-sm">Seconds</span>
-          </div>
-        </div>
-      </div>
+  <!-- Second Timer Box (Hours) -->
+  <div class="h-16 w-20 lg:h-20 lg:w-28 p-px rounded-lg bg-gradient-to-tr from-blue-500 via-white via-blue-500 to-blue-500">
+    <div class="bg-black rounded-lg h-full w-full flex flex-col justify-center items-center text-white">
+      <span id="hours" class="text-3xl lg:text-4xl font-semibold">17</span>
+      <span class="text-sm">Hours</span>
+    </div>
+  </div>
+
+  <!-- Third Timer Box (Minutes) -->
+  <div class="h-16 w-20 lg:h-20 lg:w-28 p-px rounded-lg bg-gradient-to-tr from-blue-500 via-white via-blue-500 to-blue-500">
+    <div class="bg-black rounded-lg h-full w-full flex flex-col justify-center items-center text-white">
+      <span id="minutes" class="text-3xl lg:text-4xl font-semibold">55</span>
+      <span class="text-sm">Minutes</span>
+    </div>
+  </div>
+
+  <!-- Fourth Timer Box (Seconds) -->
+  <div class="h-16 w-20 lg:h-20 lg:w-28 p-px rounded-lg bg-gradient-to-tr from-blue-500 via-white via-blue-500 to-blue-500">
+    <div class="bg-black rounded-lg h-full w-full flex flex-col justify-center items-center text-white">
+      <span id="seconds" class="text-3xl lg:text-4xl font-semibold">11</span>
+      <span class="text-sm">Seconds</span>
+    </div>
+  </div>
+</div>
   
       <!-- Progress Bar -->
       <div class="Progress_Bar flex justify-center">
@@ -506,5 +505,35 @@ function addCountryData() {
 
 
 window.onload = addCountryData;
+
+    // Set the target date for the countdown (e.g., April 6, 2025)
+  const targetDate = new Date("April 6, 2025 00:00:00").getTime();
+
+  // Update the countdown every 1 second
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Update the HTML elements
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+    // If the countdown is finished, display a message
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.getElementById("days").innerText = "0";
+      document.getElementById("hours").innerText = "0";
+      document.getElementById("minutes").innerText = "0";
+      document.getElementById("seconds").innerText = "0";
+    }
+  }, 1000);
   </script>
 </html>
