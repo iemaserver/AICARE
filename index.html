@@ -315,12 +315,15 @@
         <div class="aboutItem">
           <div class="aboutItem2Heading my-10 lg:my-20 block flex justify-center relative">
             <div class="flex justify-center">
-              <div class="aboutItem2HeadingText opacity-30 text-blue-600 text-6xl lg:text-8xl radial-gradient-text bg-clip-text text-transparent font-bold">
-                JOURNEY
-              </div>
-              <div class="text-4xl lg:text-6xl text-blue-600 inset-x-1/3 top-3 lg:top-6 lg:left-72 absolute">
-                ABOUT
-              </div>
+              <div class="relative flex flex-col items-center">
+  <div class="aboutItem2HeadingText opacity-30 text-blue-600 text-6xl lg:text-8xl radial-gradient-text bg-clip-text text-transparent font-bold">
+    JOURNEY
+  </div>
+  <div class="text-4xl lg:text-6xl text-blue-600 absolute top-3 lg:top-6">
+    ABOUT
+  </div>
+</div>
+
             </div>
           </div>
   
@@ -506,27 +509,24 @@ function addCountryData() {
 
 window.onload = addCountryData;
 
-    // Set the target date for the countdown (e.g., April 6, 2025)
-  const targetDate = new Date("April 6, 2025 00:00:00").getTime();
 
-  // Update the countdown every 1 second
+    //timer
+  const targetDate = new Date("April 4, 2025 00:00:00").getTime();
+
   const countdown = setInterval(() => {
     const now = new Date().getTime();
     const distance = targetDate - now;
-
-    // Calculate days, hours, minutes, and seconds
+    
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Update the HTML elements
     document.getElementById("days").innerText = days;
     document.getElementById("hours").innerText = hours;
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
 
-    // If the countdown is finished, display a message
     if (distance < 0) {
       clearInterval(countdown);
       document.getElementById("days").innerText = "0";
