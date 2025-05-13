@@ -42,7 +42,64 @@
             transform: scale(1.05);
             transition: transform 0.3s ease-in-out;
         }
-    </style>
+
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+      background-color: #1E3A8A;
+    }
+
+    .card:hover .name,
+    .card:hover .designation,
+    .card:hover .write-up {
+      color: white;
+    }
+
+    .card:hover strong {
+      color: white; /* Change strong text color to white on hover */
+    }
+
+    .name {
+      color: #1E3A8A;
+    }
+
+    .designation {
+      color: #4B5563;
+    }
+
+    .write-up {
+      color: #1F2937;
+      font-size: 1rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+</style>
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal ">
@@ -363,12 +420,74 @@
         </nav>
     <!-- Hero Section with Venue Image -->
     <section class="relative">
-        <div class="h-80 md:h-[400px] overflow-hidden bg-cover bg-center" style="background-image: url('../assets/3391556.jpg');">
+        <div class="h-80 md:h-[200px] overflow-hidden bg-cover bg-center" style="background-image: url('../assets/3391556.jpg');">
             <div class="flex items-center justify-center h-full bg-blue-800 bg-opacity-60">
                 <h1 class="text-5xl text-white font-bold uppercase text-center">Key Note Speakers</h1>
             </div>
         </div>
     </section>
+
+
+    <section class="py-20 px-4 md:px-12 bg-gradient-to-b from-blue-50 to-blue-100">
+    <div class="max-w-7xl mx-auto">
+     
+
+      <div class="flex flex-col gap-8">
+
+        <!-- Speaker 1 -->
+        <div class="card flex flex-row items-center gap-10 border border-blue-200 shadow-md transition-all duration-300 fade-up">
+          <div class="flex flex-col items-center gap-4 w-1/3">
+            <img src="../assets/HiranmaySaha.png" alt="Prof Dr. Hiranmay Saha" class="w-36 h-36 rounded-full object-cover border-4 border-blue-300">
+            <div class="text-center">
+              <h3 class="text-xl font-semibold name">Prof Dr. Hiranmay Saha</h3>
+              <p class="text-sm font-medium designation">Chair Professor, IEST Shibpur</p>
+            </div>
+          </div>
+          <div class="w-2/3">
+            <p class="text-base write-up">
+              Prof. Dr. Hiranmay Saha has over <strong class="text-black font-semibold">50 years</strong> of teaching and research experience. He was with the <strong class="text-black font-semibold">Department of Physics, University of Kalyani</strong>, Kalyani, India, and also with the <strong class="text-black font-semibold">Department of Electronics and Telecommunication Engineering, Jadavpur University</strong>, Kolkata, India. He is currently a <strong class="text-black font-semibold">Chair Professor</strong>, and also a <strong class="text-black font-semibold">Coordinator</strong> with the <strong class="text-black font-semibold">Center of Excellence for Green Energy and Sensor Systems</strong>, Institute of Engineering Science and Technology, Shibpur, India. Currently, he is working as a <strong class="text-black font-semibold">Visiting Professor</strong> at the <strong class="text-black font-semibold">School of Advanced Materials, Green Energy, and Sensor Systems, IIEST Shibpur</strong>, India.
+            </p>
+          </div>
+        </div>
+
+        <!-- Speaker 2 -->
+        <div class="card flex flex-row items-center gap-10 border border-blue-200 shadow-md transition-all duration-300 fade-up">
+          <div class="flex flex-col items-center gap-4 w-1/3">
+            <img src="../assets/AsisKumarChattopadhyay.png" alt="Prof Asis Kumar Chattopadhyay" class="w-36 h-36 rounded-full object-cover border-4 border-blue-300">
+            <div class="text-center">
+              <h3 class="text-xl font-semibold name">Prof Asis Kumar Chattopadhyay</h3>
+              <p class="text-sm font-medium designation">Visiting Professor, Indian Statistical Institute</p>
+            </div>
+          </div>
+          <div class="w-2/3">
+            <p class="text-base write-up">
+              Prof. Asis Kumar Chattopadhyay was the former <strong class="text-black font-semibold">Vice-Chancellor (interim)</strong>, <strong class="text-black font-semibold">Pro-Vice Chancellor for Academic Affairs</strong> and <strong class="text-black font-semibold">Professor of Statistics</strong> at the University of Calcutta. After retiring from Calcutta University on December 31, 2024, he is currently a <strong class="text-black font-semibold">Visiting Professor</strong> at the <strong class="text-black font-semibold">Indian Statistical Institute, Kolkata</strong>. He is also the <strong class="text-black font-semibold">Coordinator</strong> of the <strong class="text-black font-semibold">IUCAA Centre for Astronomy Research and Development (ICARD)</strong>, Kolkata. Prof. Chattopadhyay has been a <strong class="text-black font-semibold">Visiting Associate</strong> at the <strong class="text-black font-semibold">Inter University Centre for Astronomy and Astrophysics (IUCAA)</strong>, Pune since 2005. His book, jointly written with Professor Tanuka Chattopadhyay, entitled <strong class="text-black font-semibold">Statistical Methods for Astronomical Data Analysis</strong>, Springer Series in Astrostatistics, New York, 2014, was selected under the category of “<strong class="text-black font-semibold">Outstanding Publication in Astrostatistics-2016</strong>” by the International Astrostatistics Association.
+            </p>
+          </div>
+        </div>
+
+        <!-- Speaker 3 -->
+        <div class="card flex flex-row items-center gap-10 border border-blue-200 shadow-md transition-all duration-300 fade-up">
+          <div class="flex flex-col items-center gap-4 w-1/3">
+            <img src="../assets/AjitKembhavi.png" alt="Prof Dr. Ajit Kembhavi" class="w-36 h-36 rounded-full object-cover border-4 border-blue-300">
+            <div class="text-center">
+              <h3 class="text-xl font-semibold name">Prof Dr. Ajit Kembhavi</h3>
+              <p class="text-sm font-medium designation">Principal Investigator, Pune Knowledge Cluster</p>
+            </div>
+          </div>
+          <div class="w-2/3">
+            <p class="text-base write-up">
+              Prof. Dr. Ajit Kembhavi is the <strong class="text-black font-semibold">Principal Investigator</strong> of the <strong class="text-black font-semibold">Pune Knowledge Cluster</strong>, along with Professor L. S. Shashidhara. He is a <strong class="text-black font-semibold">Professor Emeritus</strong> and former <strong class="text-black font-semibold">Raja Ramanna Fellow</strong> at the <strong class="text-black font-semibold">Inter-University Centre for Astronomy and Astrophysics (IUCAA)</strong>, Pune, and was the <strong class="text-black font-semibold">Director</strong> there until August 2015. Prof. Kembhavi is a distinguished astronomer who works on <strong class="text-black font-semibold">galaxies</strong>, <strong class="text-black font-semibold">quasars</strong>, and other extragalactic objects, along with various areas of <strong class="text-black font-semibold">high energy astrophysics</strong>, including X-ray and radio pulsars. He has been a member of the <strong class="text-black font-semibold">Space Commission</strong> and is currently a member of <strong class="text-black font-semibold">ISRO’s Apex Science Board</strong>. Prof. Kembhavi is the former <strong class="text-black font-semibold">Vice-President of the International Astronomical Union</strong> and former <strong class="text-black font-semibold">President of the Astronomical Society of India</strong>. He is also the <strong class="text-black font-semibold">President</strong> of <strong class="text-black font-semibold">Jyotirvidya Parisanstha</strong>, Poona, India’s oldest association of amateur astronomers, established in 1944.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+    
 </body>
 
 </html>
