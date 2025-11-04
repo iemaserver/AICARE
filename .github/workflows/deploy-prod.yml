@@ -3,7 +3,7 @@ name: Build and Deploy (Preview)
 on:
   push:
     branches:
-      - react-test   # 👈 only runs when you push to this branch
+      - react-test   # runs only on this branch
 
 env:
   NODE_ENV: development
@@ -12,7 +12,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/react-test'
 
     steps:
       - name: Checkout repository
@@ -27,25 +26,21 @@ jobs:
       - name: Upload build files
         uses: actions/upload-artifact@v4
         with:
-          name: production-files
-          path: ./build
+          name: build-output       # ✅ simpler name
+          path: build              # ✅ no "./" — just "build"
 
 
   deploy:
     name: Deploy Preview
-    needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/react-test'
+    needs: build                  # ✅ ensures it runs AFTER build
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Download build files
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: production-files
-          path: ./build 
+          name: build-output       # ✅ must match name above
+          path: build              # ✅ same path as Firebase expects
 
       - name: Deploy to Firebase (Preview)
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -53,4 +48,4 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: "${{ secrets.FIREBASE_PROJECT_ID }}"
-          channelId: preview   # 👈 safe preview channel
+          channelId: preview
