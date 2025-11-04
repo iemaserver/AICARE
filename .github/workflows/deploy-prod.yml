@@ -46,9 +46,10 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting (Live)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: "${{ secrets.FIREBASE_PROJECT_ID }}"
+          channelId: live
