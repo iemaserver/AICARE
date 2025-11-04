@@ -1,12 +1,12 @@
-name: Build and Deploy (Preview)
+name: Deploy to Live (Production)
 
 on:
   push:
     branches:
-      - react-test
+      - main   # Deploys automatically when code is pushed or merged into main
 
 env:
-  NODE_ENV: development
+  NODE_ENV: production
 
 jobs:
   build:
@@ -27,10 +27,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: production-files
-          path: ./dist
+          path: ./dist   # keep dist since your Vite build outputs here
 
   deploy:
-    name: Deploy Preview
+    name: Deploy Live
     needs: build
     runs-on: ubuntu-latest
 
@@ -44,10 +44,10 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Deploy to Firebase (Preview)
+      - name: Deploy to Firebase (Live)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: "${{ secrets.FIREBASE_PROJECT_ID }}"
-          channelId: preview
+          channelId: live   # 👈 this is the only difference — deploys to production channel
