@@ -38,10 +38,23 @@ const Speakers = () => {
       image: '/assets/Saptarshi.jpg',
       bio: 'Prof. Dr. Saptarshi Sengupta is an Assistant Professor in the Department of Computer Science at San José State University (California State University - San José), USA, and a computational scientist working at the intersection of Cyber-Physical Systems and Machine Learning. He leads the Machine Intelligence and Complex Systems (MICoSys) Lab at SJSU, where his research focuses on integrating machine learning and nature-inspired computing for the analysis of complex systems, with particular emphasis on risk quantification and resilience modeling. Prof. Sengupta actively collaborates with local entities across Silicon Valley and beyond, driving innovation through scalable, real-world applications of intelligent systems. In 2023, Prof. Sengupta was awarded the prestigious EB-1A Extraordinary Ability classification by the USCIS, recognizing his strong contributions to research in CPS, AI, and Optimization. He has been a member of several organizations, including the IEEE, the American Statistical Association – San Francisco Bay Area Chapter, and Sigma Xi.'
     },
+      {
+  name: 'Prof. Wong Kin Shun, Terence',
+  designation: 'Associate Professor, Nanyang Technological University, Singapore',
+  image: '/assets/wong.jpg',
+  bio: 'Prof. Wong Kin Shun, Terence is an Associate Professor at Nanyang Technological University (NTU), Singapore. He is actively engaged in interdisciplinary research and teaching across Computer Science, Artificial Intelligence, and Engineering Systems. His academic work focuses on developing data-driven computational frameworks and integrating machine learning methodologies into engineering problem-solving. Prof. Wong’s research emphasizes applied AI, pedagogical innovation, and mentorship of young researchers in emerging technologies. At NTU, he leads initiatives promoting technological advancement and sustainability through research collaborations and student-driven innovation, contributing significantly to Singapore’s AI and technology ecosystem.'
+},
+{
+  name: 'Dr. Abhishek Das',
+  designation: 'Associate Professor & Head, Dept. of Computer Science and Engineering, Aliah University, Kolkata, India',
+  image: '/assets/abhishek.png',
+  bio: 'Dr. Abhishek Das is an Associate Professor and Head of the Department of Computer Science and Engineering at Aliah University, Kolkata, India. His teaching and research span Artificial Intelligence, Machine Learning, and Data Science, combining theoretical depth with practical applications. Dr. Das has guided several postgraduate and doctoral projects and published extensively in reputed international journals and conferences. As a department head, he has led initiatives in academic innovation, research collaboration, and technological development. His interests include AI for social good, ethical computing, and sustainable technology, and he continues to inspire students and researchers in advancing computer science education and research in India.'
+},
+
     {
       name: 'Prof. Luís Miguel Cardoso',
       designation: 'Professor, Polytechnic Institute of Portalegre, Portugal',
-      image: '/assets/placeholder.png',
+      image: '/assets/luis.jpeg',
       bio: 'Luís Miguel Cardoso holds a PhD in Modern Languages and Literatures, in the speciality of Comparative Literature from the University of Coimbra, Portugal. He was Dean of the School of Education and Social Sciences of the Polytechnic Institute of Portalegre, Portugal, between 2010 and 2018 and Deputy Director of the Master in Media and Society. He was President of ARIPESE, Association of Reflection and Intervention in the Educational Policy of Higher Education Schools in Portugal (2015 – 2018). Professor at the Department of Language and Communication Sciences at the School of Education and Social Sciences of the Polytechnic Institute of Portalegre, Portugal, he has been a professor of Higher Education since 1995 and is currently a researcher at the Centre for Comparative Studies at the University of Lisbon and CARE - Research Centre on Health and Social Sciences. His main areas of teaching and research are Sciences of Language and Communication, Pedagogical Innovation, Literacies, Education, Higher Education and Social Responsibility, and Literature and Cinema.'
     }
   ];
@@ -117,3 +130,4 @@ const Speakers = () => {
 };
 
 export default Speakers;
+
