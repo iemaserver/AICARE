@@ -214,7 +214,7 @@ const Home = () => {
               <div className="flex flex-wrap gap-2 lg:gap-4 items-center justify-center">
                 <button 
                   type="button"
-                  onClick={() => window.open('public/assets/AICARE_Schedule_Online_Session_1.pdf', '_blank')}
+                  onClick={() => window.open('/assets/AICARE_Schedule_Online_Session_1.pdf', '_blank')}
                   className="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:flex-1 text-center rounded-lg px-4 py-2.5 lg:py-3 bg-gradient-to-r from-[#001f3f] to-[#0a4d8c] text-white font-semibold hover:from-white hover:to-blue-50 hover:text-[#001f3f] border-2 border-[#001f3f] transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base cursor-pointer"
                 >
                   Online_Session-1
@@ -253,7 +253,7 @@ const Home = () => {
               <div className="flex justify-center">
                 <button 
                   type="button"
-                  onClick={() => window.open('/assets/AICARE_2025_Program_Schedule.pdf', '_blank')}
+                  onClick={() => window.open('/assets/AICARE_Schedule_offline.pdf', '_blank')}
                   className="w-60 sm:w-72 md:w-80 lg:w-96 text-center rounded-lg px-4 py-2.5 lg:py-3 bg-gradient-to-r from-[#001f3f] to-[#0a4d8c] text-white font-semibold hover:from-white hover:to-blue-50 hover:text-[#001f3f] border-2 border-[#001f3f] transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base cursor-pointer"
                 >
                   Offline Program Schedule
@@ -562,4 +562,5 @@ const Home = () => {
 };
 
 export default Home;
+
 
