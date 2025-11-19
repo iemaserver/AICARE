@@ -3,15 +3,6 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
-  // Helper function to get correct asset URL for both localhost and production
-  const getAssetUrl = (path) => {
-    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    if (isLocalhost) {
-      return path; // Use relative path for localhost
-    }
-    return `https://aicare.uem.edu.in${path}`; // Use full URL for production
-  };
-
   const [timeLeft, setTimeLeft] = useState({
     days: 99,
     hours: 17,
@@ -204,9 +195,13 @@ const Home = () => {
       {/* Schedule Buttons Section */}
       <div style={{
         width: '100vw',
-        marginLeft: 'calc(-50vw + 50%)'
+        marginLeft: 'calc(-50vw + 50%)',
+        backgroundImage: "url('/assets/AboutBg.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
       }}>
-        <div className="bg-gradient-to-r from-blue-50 to-white py-6 lg:py-10">
+        <div className="py-6 lg:py-10">
           <div className="max-w-7xl mx-auto px-4">
             
             {/* Online Schedule Section */}
